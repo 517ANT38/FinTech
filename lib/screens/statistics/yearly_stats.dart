@@ -7,8 +7,8 @@ class YearlyStats extends StatefulWidget {
   final List<Map<String, Object>> groupedTransactionValues;
 
   const YearlyStats({
-    Key key,
-    this.groupedTransactionValues,
+    required Key key,
+    required this.groupedTransactionValues,
   }) : super(key: key);
 
   @override
@@ -82,16 +82,15 @@ class _YearlyStatsState extends State<YearlyStats> {
       x: x,
       barRods: [
         BarChartRodData(
-          y: y,
-          colors: isTouched ? [Theme.of(context).primaryColor] : [Colors.white],
+          fromY: y,
+          color: isTouched ? Theme.of(context).primaryColor : Colors.white,
           width: 22,
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
-            y: 20,
-            colors: [
-              Theme.of(context).primaryColorLight
-            ], //[Color(0xff72d8bf)],
-          ),
+            fromY: 20,
+            color:Theme.of(context).primaryColorLight
+            , //[Color(0xff72d8bf)],
+          ), toY: 0,
         ),
       ],
     );

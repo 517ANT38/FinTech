@@ -8,8 +8,8 @@ class MyPieChart extends StatefulWidget {
   final List<PieData> pieData;
 
   const MyPieChart({
-    Key key,
-    this.pieData,
+    required Key key,
+    required this.pieData,
   }) : super(key: key);
 
   @override
